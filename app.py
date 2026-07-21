@@ -17,9 +17,28 @@ def webhook():
     chat_id = update["message"]["chat"]["id"]
     text = update["message"].get("text", "")
 
+    # Comando /start
     if text == "/start":
       enviar_mensagem(
-          chat_id, "Olá, Caio! Seu bot Python no Render está rodando com sucesso! 🚀"
+          chat_id, "Olá, Caio! Escolha uma opção:\n\n/consulta - Fazer uma nova consulta\n/sobre - Informações do bot"
+      )
+    
+    # Novo comando /consulta
+    elif text == "/consulta":
+      enviar_mensagem(
+          chat_id, "🔍 Você escolheu Consultar!\n\nPor favor, digite o que você deseja buscar..."
+      )
+
+    # Novo comando /sobre
+    elif text == "/sobre":
+      enviar_mensagem(
+          chat_id, "ℹ️ Este é um bot de consultas criado em Python pelo Caio."
+      )
+
+    # O que ele responde se a pessoa digitar qualquer outra coisa
+    else:
+      enviar_mensagem(
+          chat_id, f"Você digitou: {text}\nEm breve vou conseguir consultar essa informação para você!"
       )
 
   return "OK", 200
