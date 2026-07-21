@@ -5,7 +5,7 @@ from flask import Flask, request
 app = Flask(__name__)
 
 # Token do seu bot
-TOKEN = "8965654492:AAHG05JuRJeVm7ovQSe3vXH01k4bZgVOfjl"
+TOKEN = "8965654492:AAE4BrpoPMoe8AFd0sIsuH2MrZyaEJgpxgw"
 TELEGRAM_API = f"https://api.telegram.org/bot{TOKEN}"
 
 
